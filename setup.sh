@@ -47,7 +47,8 @@ while true; do
         sudo docker compose restart
         ;;
     5)
-        cp custom-integrations/custom-abuseipdb.py /var/lib/docker/volumes/wazuh_wazuh_integrations/_data/custom-abuseipdb.py
+        # cp custom-integrations/custom-abuseipdb.py /var/lib/docker/volumes/wazuh_wazuh_integrations/_data/custom-abuseipdb.py
+        sudo docker exec -ti wazuh-wazuh.manager-1 cp custom-integrations/custom-abuseipdb.py /var/ossec/integrations/custom-abuseipdb.py
         sudo docker exec -ti wazuh-wazuh.manager-1 chown root:wazuh /var/ossec/integrations/custom-abuseipdb.py
         sudo docker exec -ti wazuh-wazuh.manager-1 chmod 750 /var/ossec/integrations/custom-abuseipdb.py
         cd wazuh && sudo docker compose restart
