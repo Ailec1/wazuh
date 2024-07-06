@@ -8,7 +8,8 @@ while true; do
                     "4" "Local rules and local decoder" \
                     "5" "Custom AbuseIPDB Integration" \
                     "6" "Restart Wazuh" \
-                    "7" "Delete All Containers, Images, Volumes, and Networks" 3>&1 1>&2 2>&3)
+                    "7" "API down Solution" \
+                    "8" "Delete All Containers, Images, Volumes, and Networks" 3>&1 1>&2 2>&3)
     # Script version 1.0 updated 15 November 2023
     # Depending on the chosen option, execute the corresponding command
     case $OPTION in
@@ -54,8 +55,11 @@ while true; do
     6)
         sudo docker compose restart
         ;;
-
     7)
+        sudo docker exec -ti wazuh-wazuh.manager-1 /bin/bash
+        chmod -R 750 /var/ossec/logs/alerts
+        ;;
+    8)
         # Stop all containers
         sudo docker stop $(sudo docker ps -a -q)
         # Delete all containers

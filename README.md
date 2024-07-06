@@ -22,3 +22,6 @@ $ docker-compose up -d
 ```
 
 The environment takes about 1 minute to get up (depending on your Docker host) for the first time since Wazuh Indexer must be started for the first time and the indexes and index patterns must be generated.
+
+Commande à effectuer :
+chmod -R 750 /wazuh
