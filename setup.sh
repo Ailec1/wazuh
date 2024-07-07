@@ -57,8 +57,7 @@ while true; do
         sudo docker compose restart
         ;;
     7)
-        sudo docker exec -ti wazuh-wazuh.manager-1 /bin/bash
-        chmod -R 750 /var/ossec/logs/alerts
+        sudo docker exec -ti wazuh-wazuh.manager-1 chmod -R 750 /var/ossec/logs/alerts
         ;;
     8)
         # Stop all containers
