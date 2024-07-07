@@ -10,7 +10,6 @@ while true; do
                     "6" "Restart Wazuh" \
                     "7" "API down Solution" \
                     "8" "Delete All Containers, Images, Volumes, and Networks" 3>&1 1>&2 2>&3)
-    # Script version 1.0 updated 15 November 2023
     # Depending on the chosen option, execute the corresponding command
     case $OPTION in
     1)
