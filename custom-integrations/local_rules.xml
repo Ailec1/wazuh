@@ -195,15 +195,6 @@
       <id>T1087.002</id>
     </mitre>
   </rule>
-  <rule id="100543" level="12">
-    <if_sid>100541</if_sid>
-    <list field="win.eventdata.scriptBlockText" lookup="match_key">etc/lists/malicious-powershell</list>
-    <description>Malicious Powershell Command $(win.eventdata.scriptBlockText) Executed</description>
-    <mitre>
-      <id>T1087.002</id>
-    </mitre>
-    <options>no_full_log</options>
-  </rule>
   <rule id="100544" level="1">
     <if_sid>100541</if_sid>
     <field name="win.eventdata.scriptBlockText">PSMessageDetails|ErrorCategory_Message|OriginInfo</field>
